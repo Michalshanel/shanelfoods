@@ -51,191 +51,399 @@
                 <p>Each day brings a carefully curated breakfast to fuel your morning</p>
             </div>
 
-            <div class="menu-grid">
-                <!-- Monday -->
-                <div class="menu-card">
-                    <div class="menu-card-header">
-                        <span class="menu-day">Monday</span>
-                        <h3>Fresh Start</h3>
-                    </div>
-                    <ul class="menu-items">
-                        <li>
-                            <span class="item-icon"><img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=100&h=100&fit=crop" alt="Fruit Bowl"></span>
-                            <div class="item-details">
-                                <span class="item-name">Seasonal Fruit Bowl</span>
-                                <span class="item-desc">Fresh cut apples, bananas & pomegranate</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="item-icon"><img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=100&h=100&fit=crop" alt="Sprouts"></span>
-                            <div class="item-details">
-                                <span class="item-name">Mixed Sprouts</span>
-                                <span class="item-desc">Protein-rich moong & chana sprouts</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="item-icon"><img src="https://images.pexels.com/photos/209345/pexels-photo-209345.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Peanuts"></span>
-                            <div class="item-details">
-                                <span class="item-name">Roasted Peanuts</span>
-                                <span class="item-desc">Crunchy, lightly salted peanuts</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <!-- Menu Tabs -->
+            <div class="menu-tabs">
+                <button class="menu-tab active" onclick="showMenu('veg')">
+                    <span class="veg-icon"></span> Pure Veg
+                </button>
+                <button class="menu-tab" onclick="showMenu('nonveg')">
+                    <span class="nonveg-icon"></span> With Egg
+                </button>
+            </div>
 
-                <!-- Tuesday -->
-                <div class="menu-card">
-                    <div class="menu-card-header">
-                        <span class="menu-day">Tuesday</span>
-                        <h3>Protein Power</h3>
+            <!-- Veg Menu -->
+            <div id="veg-menu" class="menu-content active">
+                <div class="menu-grid">
+                    <!-- Monday -->
+                    <div class="menu-card">
+                        <div class="menu-card-header">
+                            <span class="menu-day">Monday</span>
+                            <h3>Fresh Start</h3>
+                        </div>
+                        <ul class="menu-items">
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=100&h=100&fit=crop" alt="Fruit Bowl"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Seasonal Fruit Bowl</span>
+                                    <span class="item-desc">Fresh cut apples, bananas & pomegranate</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=100&h=100&fit=crop" alt="Sprouts"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Mixed Sprouts</span>
+                                    <span class="item-desc">Protein-rich moong & chana sprouts</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.pexels.com/photos/209345/pexels-photo-209345.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Peanuts"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Roasted Peanuts</span>
+                                    <span class="item-desc">Crunchy, lightly salted peanuts</span>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="menu-items">
-                        <li>
-                            <span class="item-icon"><img src="https://images.unsplash.com/photo-1598965675045-45c5e72c7d05?w=100&h=100&fit=crop" alt="Boiled Eggs"></span>
-                            <div class="item-details">
-                                <span class="item-name">Boiled Eggs (2 pcs)</span>
-                                <span class="item-desc">Perfectly boiled, easy to peel</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="item-icon"><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=100&h=100&fit=crop" alt="Omelette"></span>
-                            <div class="item-details">
-                                <span class="item-name">Vegetable Omelette</span>
-                                <span class="item-desc">Fluffy omelette with onions & tomatoes</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="item-icon"><img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=100&h=100&fit=crop" alt="Banana"></span>
-                            <div class="item-details">
-                                <span class="item-name">Fresh Banana</span>
-                                <span class="item-desc">Energy-boosting ripe banana</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
 
-                <!-- Wednesday -->
-                <div class="menu-card">
-                    <div class="menu-card-header">
-                        <span class="menu-day">Wednesday</span>
-                        <h3>Fiber Fuel</h3>
+                    <!-- Tuesday -->
+                    <div class="menu-card">
+                        <div class="menu-card-header">
+                            <span class="menu-day">Tuesday</span>
+                            <h3>Protein Power</h3>
+                        </div>
+                        <ul class="menu-items">
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=100&h=100&fit=crop" alt="Sprouts"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Protein Sprouts Bowl</span>
+                                    <span class="item-desc">Double portion of mixed sprouts</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.pexels.com/photos/209345/pexels-photo-209345.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Peanuts"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Masala Peanuts</span>
+                                    <span class="item-desc">Spiced peanuts with curry leaves</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=100&h=100&fit=crop" alt="Banana"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Fresh Banana</span>
+                                    <span class="item-desc">Energy-boosting ripe banana</span>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="menu-items">
-                        <li>
-                            <span class="item-icon"><img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=100&h=100&fit=crop" alt="Sweet Corn"></span>
-                            <div class="item-details">
-                                <span class="item-name">Sweet Corn Cup</span>
-                                <span class="item-desc">Steamed sweet corn with a dash of lime</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="item-icon"><img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=100&h=100&fit=crop" alt="Sprouts"></span>
-                            <div class="item-details">
-                                <span class="item-name">Sprouts Chaat</span>
-                                <span class="item-desc">Sprouts with cucumber, tomato & spices</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="item-icon"><img src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=100&h=100&fit=crop" alt="Grapes"></span>
-                            <div class="item-details">
-                                <span class="item-name">Seasonal Grapes</span>
-                                <span class="item-desc">Fresh, sweet seedless grapes</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
 
-                <!-- Thursday -->
-                <div class="menu-card">
-                    <div class="menu-card-header">
-                        <span class="menu-day">Thursday</span>
-                        <h3>Energy Boost</h3>
+                    <!-- Wednesday -->
+                    <div class="menu-card">
+                        <div class="menu-card-header">
+                            <span class="menu-day">Wednesday</span>
+                            <h3>Fiber Fuel</h3>
+                        </div>
+                        <ul class="menu-items">
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=100&h=100&fit=crop" alt="Sweet Corn"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Sweet Corn Cup</span>
+                                    <span class="item-desc">Steamed sweet corn with a dash of lime</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=100&h=100&fit=crop" alt="Sprouts"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Sprouts Chaat</span>
+                                    <span class="item-desc">Sprouts with cucumber, tomato & spices</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=100&h=100&fit=crop" alt="Grapes"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Seasonal Grapes</span>
+                                    <span class="item-desc">Fresh, sweet seedless grapes</span>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="menu-items">
-                        <li>
-                            <span class="item-icon"><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=100&h=100&fit=crop" alt="Omelette"></span>
-                            <div class="item-details">
-                                <span class="item-name">Egg White Omelette</span>
-                                <span class="item-desc">Low-fat, high-protein option</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="item-icon"><img src="https://images.pexels.com/photos/209345/pexels-photo-209345.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Peanuts"></span>
-                            <div class="item-details">
-                                <span class="item-name">Peanut Mix</span>
-                                <span class="item-desc">Peanuts with roasted chana</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="item-icon"><img src="https://images.unsplash.com/photo-1582979512210-99b6a53386f9?w=100&h=100&fit=crop" alt="Orange"></span>
-                            <div class="item-details">
-                                <span class="item-name">Orange Segments</span>
-                                <span class="item-desc">Vitamin C rich citrus fruit</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
 
-                <!-- Friday -->
-                <div class="menu-card">
-                    <div class="menu-card-header">
-                        <span class="menu-day">Friday</span>
-                        <h3>Balanced Bite</h3>
+                    <!-- Thursday -->
+                    <div class="menu-card">
+                        <div class="menu-card-header">
+                            <span class="menu-day">Thursday</span>
+                            <h3>Energy Boost</h3>
+                        </div>
+                        <ul class="menu-items">
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=100&h=100&fit=crop" alt="Corn"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Masala Corn</span>
+                                    <span class="item-desc">Spiced corn with butter & herbs</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.pexels.com/photos/209345/pexels-photo-209345.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Peanuts"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Peanut Mix</span>
+                                    <span class="item-desc">Peanuts with roasted chana</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1582979512210-99b6a53386f9?w=100&h=100&fit=crop" alt="Orange"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Orange Segments</span>
+                                    <span class="item-desc">Vitamin C rich citrus fruit</span>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="menu-items">
-                        <li>
-                            <span class="item-icon"><img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=100&h=100&fit=crop" alt="Apple"></span>
-                            <div class="item-details">
-                                <span class="item-name">Apple & Pomegranate</span>
-                                <span class="item-desc">Antioxidant-rich fruit combo</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="item-icon"><img src="https://images.unsplash.com/photo-1598965675045-45c5e72c7d05?w=100&h=100&fit=crop" alt="Eggs"></span>
-                            <div class="item-details">
-                                <span class="item-name">Boiled Eggs (2 pcs)</span>
-                                <span class="item-desc">Classic protein starter</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="item-icon"><img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=100&h=100&fit=crop" alt="Corn"></span>
-                            <div class="item-details">
-                                <span class="item-name">Butter Corn</span>
-                                <span class="item-desc">Sweet corn with a touch of butter</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
 
-                <!-- Saturday -->
-                <div class="menu-card">
-                    <div class="menu-card-header">
-                        <span class="menu-day">Saturday</span>
-                        <h3>Weekend Special</h3>
+                    <!-- Friday -->
+                    <div class="menu-card">
+                        <div class="menu-card-header">
+                            <span class="menu-day">Friday</span>
+                            <h3>Balanced Bite</h3>
+                        </div>
+                        <ul class="menu-items">
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=100&h=100&fit=crop" alt="Apple"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Apple & Pomegranate</span>
+                                    <span class="item-desc">Antioxidant-rich fruit combo</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=100&h=100&fit=crop" alt="Sprouts"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Sprouts Sundal</span>
+                                    <span class="item-desc">Traditional South Indian style sprouts</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=100&h=100&fit=crop" alt="Corn"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Butter Corn</span>
+                                    <span class="item-desc">Sweet corn with a touch of butter</span>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="menu-items">
-                        <li>
-                            <span class="item-icon"><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=100&h=100&fit=crop" alt="Omelette"></span>
-                            <div class="item-details">
-                                <span class="item-name">Masala Omelette</span>
-                                <span class="item-desc">Spiced omelette with green chilies</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="item-icon"><img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=100&h=100&fit=crop" alt="Sprouts"></span>
-                            <div class="item-details">
-                                <span class="item-name">Premium Sprout Bowl</span>
-                                <span class="item-desc">Mixed sprouts with special seasoning</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="item-icon"><img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=100&h=100&fit=crop" alt="Mixed Fruits"></span>
-                            <div class="item-details">
-                                <span class="item-name">Mixed Fruit Delight</span>
-                                <span class="item-desc">Chef's special fruit combination</span>
-                            </div>
-                        </li>
-                    </ul>
+
+                    <!-- Saturday -->
+                    <div class="menu-card">
+                        <div class="menu-card-header">
+                            <span class="menu-day">Saturday</span>
+                            <h3>Weekend Special</h3>
+                        </div>
+                        <ul class="menu-items">
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=100&h=100&fit=crop" alt="Sprouts"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Premium Sprout Bowl</span>
+                                    <span class="item-desc">Mixed sprouts with special seasoning</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.pexels.com/photos/209345/pexels-photo-209345.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Peanuts"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Spiced Peanut Chaat</span>
+                                    <span class="item-desc">Peanuts with onion, tomato & lime</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=100&h=100&fit=crop" alt="Mixed Fruits"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Mixed Fruit Delight</span>
+                                    <span class="item-desc">Chef's special fruit combination</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Non-Veg (Egg) Menu -->
+            <div id="nonveg-menu" class="menu-content">
+                <div class="menu-grid">
+                    <!-- Monday -->
+                    <div class="menu-card">
+                        <div class="menu-card-header">
+                            <span class="menu-day">Monday</span>
+                            <h3>Fresh Start</h3>
+                        </div>
+                        <ul class="menu-items">
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=100&h=100&fit=crop" alt="Fruit Bowl"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Seasonal Fruit Bowl</span>
+                                    <span class="item-desc">Fresh cut apples, bananas & pomegranate</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=100&h=100&fit=crop" alt="Sprouts"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Mixed Sprouts</span>
+                                    <span class="item-desc">Protein-rich moong & chana sprouts</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.pexels.com/photos/209345/pexels-photo-209345.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Peanuts"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Roasted Peanuts</span>
+                                    <span class="item-desc">Crunchy, lightly salted peanuts</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tuesday -->
+                    <div class="menu-card egg-day">
+                        <div class="menu-card-header">
+                            <span class="menu-day">Tuesday</span>
+                            <h3>Protein Power</h3>
+                            <span class="egg-badge">Contains Egg</span>
+                        </div>
+                        <ul class="menu-items">
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1598965675045-45c5e72c7d05?w=100&h=100&fit=crop" alt="Boiled Eggs"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Boiled Eggs (2 pcs)</span>
+                                    <span class="item-desc">Perfectly boiled, easy to peel</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=100&h=100&fit=crop" alt="Omelette"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Vegetable Omelette</span>
+                                    <span class="item-desc">Fluffy omelette with onions & tomatoes</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=100&h=100&fit=crop" alt="Banana"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Fresh Banana</span>
+                                    <span class="item-desc">Energy-boosting ripe banana</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Wednesday -->
+                    <div class="menu-card">
+                        <div class="menu-card-header">
+                            <span class="menu-day">Wednesday</span>
+                            <h3>Fiber Fuel</h3>
+                        </div>
+                        <ul class="menu-items">
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=100&h=100&fit=crop" alt="Sweet Corn"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Sweet Corn Cup</span>
+                                    <span class="item-desc">Steamed sweet corn with a dash of lime</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=100&h=100&fit=crop" alt="Sprouts"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Sprouts Chaat</span>
+                                    <span class="item-desc">Sprouts with cucumber, tomato & spices</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=100&h=100&fit=crop" alt="Grapes"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Seasonal Grapes</span>
+                                    <span class="item-desc">Fresh, sweet seedless grapes</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Thursday -->
+                    <div class="menu-card egg-day">
+                        <div class="menu-card-header">
+                            <span class="menu-day">Thursday</span>
+                            <h3>Energy Boost</h3>
+                            <span class="egg-badge">Contains Egg</span>
+                        </div>
+                        <ul class="menu-items">
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=100&h=100&fit=crop" alt="Omelette"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Egg White Omelette</span>
+                                    <span class="item-desc">Low-fat, high-protein option</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.pexels.com/photos/209345/pexels-photo-209345.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Peanuts"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Peanut Mix</span>
+                                    <span class="item-desc">Peanuts with roasted chana</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1582979512210-99b6a53386f9?w=100&h=100&fit=crop" alt="Orange"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Orange Segments</span>
+                                    <span class="item-desc">Vitamin C rich citrus fruit</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Friday -->
+                    <div class="menu-card egg-day">
+                        <div class="menu-card-header">
+                            <span class="menu-day">Friday</span>
+                            <h3>Balanced Bite</h3>
+                            <span class="egg-badge">Contains Egg</span>
+                        </div>
+                        <ul class="menu-items">
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=100&h=100&fit=crop" alt="Apple"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Apple & Pomegranate</span>
+                                    <span class="item-desc">Antioxidant-rich fruit combo</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1598965675045-45c5e72c7d05?w=100&h=100&fit=crop" alt="Eggs"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Boiled Eggs (2 pcs)</span>
+                                    <span class="item-desc">Classic protein starter</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=100&h=100&fit=crop" alt="Corn"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Butter Corn</span>
+                                    <span class="item-desc">Sweet corn with a touch of butter</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Saturday -->
+                    <div class="menu-card egg-day">
+                        <div class="menu-card-header">
+                            <span class="menu-day">Saturday</span>
+                            <h3>Weekend Special</h3>
+                            <span class="egg-badge">Contains Egg</span>
+                        </div>
+                        <ul class="menu-items">
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=100&h=100&fit=crop" alt="Omelette"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Masala Omelette</span>
+                                    <span class="item-desc">Spiced omelette with green chilies</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=100&h=100&fit=crop" alt="Sprouts"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Premium Sprout Bowl</span>
+                                    <span class="item-desc">Mixed sprouts with special seasoning</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="item-icon"><img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=100&h=100&fit=crop" alt="Mixed Fruits"></span>
+                                <div class="item-details">
+                                    <span class="item-name">Mixed Fruit Delight</span>
+                                    <span class="item-desc">Chef's special fruit combination</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -336,6 +544,16 @@
     <script>
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        function showMenu(type) {
+            // Update tabs
+            document.querySelectorAll('.menu-tab').forEach(tab => tab.classList.remove('active'));
+            event.target.closest('.menu-tab').classList.add('active');
+
+            // Update content
+            document.querySelectorAll('.menu-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(type + '-menu').classList.add('active');
         }
 
         window.addEventListener('scroll', function() {

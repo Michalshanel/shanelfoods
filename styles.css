@@ -807,6 +807,133 @@ section {
     background: var(--bg-cream);
 }
 
+/* Menu Tabs */
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.menu-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    border: 2px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-tab:hover {
+    background: rgba(26, 93, 26, 0.1);
+}
+
+.menu-tab.active {
+    background: var(--primary);
+    color: white;
+}
+
+.veg-icon, .nonveg-icon {
+    width: 16px;
+    height: 16px;
+    border: 2px solid;
+    border-radius: 3px;
+    position: relative;
+    display: inline-block;
+}
+
+.veg-icon {
+    border-color: #2e7d32;
+}
+
+.veg-icon::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #2e7d32;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nonveg-icon {
+    border-color: #c62828;
+}
+
+.nonveg-icon::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid #c62828;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu-tab.active .veg-icon {
+    border-color: white;
+}
+
+.menu-tab.active .veg-icon::after {
+    background: white;
+}
+
+.menu-tab.active .nonveg-icon {
+    border-color: white;
+}
+
+.menu-tab.active .nonveg-icon::after {
+    border-bottom-color: white;
+}
+
+.menu-content {
+    display: none;
+}
+
+.menu-content.active {
+    display: block;
+}
+
+/* Egg Badge */
+.egg-badge {
+    display: inline-block;
+    background: #c62828;
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+.menu-card.egg-day {
+    border-left: 3px solid #c62828;
+}
+
+@media (max-width: 768px) {
+    .menu-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-tab {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}
+
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));

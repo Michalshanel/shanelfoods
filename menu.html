@@ -53,10 +53,10 @@
 
             <!-- Menu Tabs -->
             <div class="menu-tabs">
-                <button class="menu-tab active" onclick="showMenu('veg')">
+                <button class="menu-tab active" onclick="showMenu('veg', this)">
                     <span class="veg-icon"></span> Pure Veg
                 </button>
-                <button class="menu-tab" onclick="showMenu('nonveg')">
+                <button class="menu-tab" onclick="showMenu('nonveg', this)">
                     <span class="nonveg-icon"></span> With Egg
                 </button>
             </div>
@@ -546,10 +546,10 @@
             document.querySelector('.nav-links').classList.toggle('active');
         }
 
-        function showMenu(type) {
+        function showMenu(type, btn) {
             // Update tabs
             document.querySelectorAll('.menu-tab').forEach(tab => tab.classList.remove('active'));
-            event.target.closest('.menu-tab').classList.add('active');
+            btn.classList.add('active');
 
             // Update content
             document.querySelectorAll('.menu-content').forEach(content => content.classList.remove('active'));

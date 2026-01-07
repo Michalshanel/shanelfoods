@@ -362,10 +362,14 @@ section {
     background: -moz-linear-gradient(135deg, #1a5d1a 0%, #0d3d0d 100%);
     background: -o-linear-gradient(135deg, #1a5d1a 0%, #0d3d0d 100%);
     background: linear-gradient(135deg, #1a5d1a 0%, #0d3d0d 100%);
-    padding: 4rem 0;
+    padding: 2rem 0;
     text-align: center;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+}
+
+.quote-section.quote-top {
+    margin-top: 80px;
 }
 
 .main-quote {
@@ -377,10 +381,10 @@ section {
 
 .quote-mark {
     font-family: Georgia, serif;
-    font-size: 8rem;
+    font-size: 5rem;
     color: rgba(255, 255, 255, 0.15);
     position: absolute;
-    top: -3rem;
+    top: -1.5rem;
     left: 0;
     line-height: 1;
 }
@@ -388,33 +392,37 @@ section {
 .main-quote p {
     color: #ffffff;
     color: rgba(255, 255, 255, 0.9);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-style: italic;
-    line-height: 1.6;
+    line-height: 1.5;
     margin: 0;
     font-family: Georgia, "Times New Roman", serif;
 }
 
 .main-quote .quote-highlight {
     color: #f9a825;
-    font-size: 1.75rem;
+    font-size: 1.35rem;
     font-weight: 600;
     font-style: normal;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     display: block;
 }
 
 @media (max-width: 768px) {
     .quote-section {
-        padding: 3rem 0;
+        padding: 1.5rem 0;
+    }
+
+    .quote-section.quote-top {
+        margin-top: 70px;
     }
 
     .main-quote p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .main-quote .quote-highlight {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     .quote-mark {

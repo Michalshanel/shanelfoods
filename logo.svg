@@ -41,13 +41,16 @@
     <path d="M30 26 Q28 23 30 20" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.7" stroke-linecap="round"/>
   </g>
 
-  <!-- Brand Name - Premium Typography -->
-  <text x="115" y="24" font-family="Georgia, Times, serif" font-size="26" font-weight="700" fill="#1a472a" text-anchor="middle">SHANEL</text>
+  <!-- Brand Name - SHANEL -->
+  <text x="115" y="22" font-family="Georgia, Times, serif" font-size="26" font-weight="700" fill="#1a472a" text-anchor="middle">SHANEL</text>
 
-  <!-- Decorative line with diamonds -->
-  <line x1="65" y1="30" x2="165" y2="30" stroke="url(#goldGrad)" stroke-width="1.5"/>
-  <polygon points="115,30 118,27 121,30 118,33" fill="url(#goldGrad)"/>
+  <!-- Gold diamond centered between SHANEL and FOODS -->
+  <polygon points="115,32 119,28 123,32 119,36" fill="url(#goldGrad)"/>
 
-  <!-- FOODS centered below SHANEL -->
+  <!-- Decorative lines on both sides of diamond -->
+  <line x1="65" y1="32" x2="112" y2="32" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  <line x1="126" y1="32" x2="165" y2="32" stroke="url(#goldGrad)" stroke-width="1.5"/>
+
+  <!-- FOODS centered below -->
   <text x="115" y="46" font-family="Inter, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#1a472a" text-anchor="middle" letter-spacing="4">FOODS</text>
 </svg>

@@ -414,7 +414,7 @@ section {
     }
 
     .quote-section.quote-top {
-        margin-top: 70px;
+        margin-top: 90px;
     }
 
     .main-quote p {
@@ -426,8 +426,8 @@ section {
     }
 
     .quote-mark {
-        font-size: 5rem;
-        top: -2rem;
+        font-size: 4rem;
+        top: -0.5rem;
     }
 }
 

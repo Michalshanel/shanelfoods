@@ -354,6 +354,64 @@ section {
 }
 
 /* ========================================
+   Quote Section
+   ======================================== */
+.quote-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.main-quote {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.quote-mark {
+    font-family: Georgia, serif;
+    font-size: 8rem;
+    color: rgba(255, 255, 255, 0.15);
+    position: absolute;
+    top: -3rem;
+    left: 0;
+    line-height: 1;
+}
+
+.main-quote p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+    font-family: Georgia, serif;
+}
+
+.main-quote .quote-highlight {
+    color: #f9a825;
+    font-size: 1.75rem;
+    font-weight: 600;
+    font-style: normal;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .main-quote p {
+        font-size: 1.2rem;
+    }
+
+    .main-quote .quote-highlight {
+        font-size: 1.4rem;
+    }
+
+    .quote-mark {
+        font-size: 5rem;
+        top: -2rem;
+    }
+}
+
+/* ========================================
    Highlights / Features
    ======================================== */
 .highlights {

@@ -42,15 +42,8 @@
   </g>
 
   <!-- Brand Name - SHANEL -->
-  <text x="115" y="22" font-family="Georgia, Times, serif" font-size="26" font-weight="700" fill="#1a472a" text-anchor="middle">SHANEL</text>
-
-  <!-- Gold diamond centered between SHANEL and FOODS -->
-  <polygon points="115,32 119,28 123,32 119,36" fill="url(#goldGrad)"/>
-
-  <!-- Decorative lines on both sides of diamond -->
-  <line x1="65" y1="32" x2="112" y2="32" stroke="url(#goldGrad)" stroke-width="1.5"/>
-  <line x1="126" y1="32" x2="165" y2="32" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  <text x="115" y="24" font-family="Georgia, Times, serif" font-size="26" font-weight="700" fill="#1a472a" text-anchor="middle">SHANEL</text>
 
   <!-- FOODS centered below -->
-  <text x="115" y="46" font-family="Inter, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#1a472a" text-anchor="middle" letter-spacing="4">FOODS</text>
+  <text x="115" y="44" font-family="Inter, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#1a472a" text-anchor="middle" letter-spacing="4">FOODS</text>
 </svg>

@@ -41,18 +41,17 @@
     <path d="M30 26 Q28 23 30 20" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.7" stroke-linecap="round"/>
   </g>
 
-  <!-- Brand Name - Premium Typography -->
-  <text x="60" y="26" font-family="Georgia, Times, serif" font-size="26" font-weight="700" fill="#1a472a">SHANEL</text>
+  <!-- Brand Name - Premium Typography (centered layout) -->
+  <text x="107" y="24" font-family="Georgia, Times, serif" font-size="26" font-weight="700" fill="#1a472a" text-anchor="middle">SHANEL</text>
 
   <!-- Decorative line with diamonds -->
-  <line x1="60" y1="32" x2="155" y2="32" stroke="url(#goldGrad)" stroke-width="1.5"/>
-  <polygon points="107,32 110,29 113,32 110,35" fill="url(#goldGrad)"/>
+  <line x1="60" y1="30" x2="155" y2="30" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  <polygon points="107,30 110,27 113,30 110,33" fill="url(#goldGrad)"/>
 
-  <!-- Tagline -->
-  <text x="60" y="46" font-family="Inter, -apple-system, sans-serif" font-size="9" font-weight="600" fill="#1a472a" letter-spacing="3">FOODS</text>
-  <text x="100" y="46" font-family="Inter, -apple-system, sans-serif" font-size="8" fill="#666" letter-spacing="1">• Est. 2025 •</text>
+  <!-- FOODS centered below SHANEL -->
+  <text x="107" y="46" font-family="Inter, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#1a472a" text-anchor="middle" letter-spacing="4">FOODS</text>
 
   <!-- Right side leaf accent -->
-  <path d="M162 18 Q175 8 178 22 Q168 22 162 18" fill="#2e7d32"/>
-  <path d="M162 18 Q170 18 175 22" stroke="#1a472a" stroke-width="0.8" fill="none"/>
+  <path d="M162 16 Q175 6 178 20 Q168 20 162 16" fill="#2e7d32"/>
+  <path d="M162 16 Q170 16 175 20" stroke="#1a472a" stroke-width="0.8" fill="none"/>
 </svg>

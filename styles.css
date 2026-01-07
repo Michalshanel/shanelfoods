@@ -357,9 +357,15 @@ section {
    Quote Section
    ======================================== */
 .quote-section {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: #1a5d1a;
+    background: -webkit-linear-gradient(135deg, #1a5d1a 0%, #0d3d0d 100%);
+    background: -moz-linear-gradient(135deg, #1a5d1a 0%, #0d3d0d 100%);
+    background: -o-linear-gradient(135deg, #1a5d1a 0%, #0d3d0d 100%);
+    background: linear-gradient(135deg, #1a5d1a 0%, #0d3d0d 100%);
     padding: 4rem 0;
     text-align: center;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .main-quote {
@@ -380,12 +386,13 @@ section {
 }
 
 .main-quote p {
+    color: #ffffff;
     color: rgba(255, 255, 255, 0.9);
     font-size: 1.5rem;
     font-style: italic;
     line-height: 1.6;
     margin: 0;
-    font-family: Georgia, serif;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 .main-quote .quote-highlight {
@@ -394,9 +401,14 @@ section {
     font-weight: 600;
     font-style: normal;
     margin-top: 1rem;
+    display: block;
 }
 
 @media (max-width: 768px) {
+    .quote-section {
+        padding: 3rem 0;
+    }
+
     .main-quote p {
         font-size: 1.2rem;
     }

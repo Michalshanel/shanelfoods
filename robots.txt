@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://michalshanel.github.io/shanelfoods/sitemap.xml

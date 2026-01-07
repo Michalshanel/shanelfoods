@@ -436,7 +436,7 @@ section {
    ======================================== */
 .order-now-section {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 2.5rem 0;
+    padding: 1.25rem 0;
     text-align: center;
 }
 
@@ -472,8 +472,11 @@ section {
 }
 
 .order-btn svg {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
 }
 
 .whatsapp-btn {
@@ -500,11 +503,17 @@ section {
 
 @media (max-width: 768px) {
     .order-now-section {
-        padding: 2rem 0;
+        padding: 1rem 0;
     }
 
     .order-content h3 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .order-content p {
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
     }
 
     .order-buttons {
@@ -516,6 +525,7 @@ section {
         width: 100%;
         max-width: 280px;
         justify-content: center;
+        padding: 0.75rem 1.25rem;
     }
 }
 
@@ -1353,8 +1363,19 @@ footer {
     color: var(--white);
 }
 
+.footer-order {
+    padding: 1.5rem 0;
+    margin-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+}
+
+.footer-order .order-buttons {
+    justify-content: center;
+}
+
 .footer-bottom {
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     border-top: 1px solid rgba(255,255,255,0.1);
     text-align: center;
 }

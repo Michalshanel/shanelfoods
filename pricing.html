@@ -79,53 +79,159 @@
             <div class="section-header">
                 <span class="section-label">Choose Your Plan</span>
                 <h2>Flexible Options for Everyone</h2>
-                <p>Whether you need daily delivery or occasional orders, we've got you covered</p>
+                <p>Select your pack and subscription duration</p>
             </div>
 
-            <div class="pricing-grid">
-                <!-- Individual Day -->
-                <div class="pricing-card">
-                    <h3>Single Day</h3>
-                    <p style="color: var(--text-light); margin-bottom: 1rem;">Try before you commit</p>
-                    <div class="price">₹99<span>/day</span></div>
-                    <ul class="pricing-features">
-                        <li><span class="check">✓</span> Full breakfast combo</li>
-                        <li><span class="check">✓</span> Fresh morning delivery</li>
-                        <li><span class="check">✓</span> No commitment</li>
-                        <li><span class="check">✓</span> Order any day</li>
-                    </ul>
-                    <a href="https://wa.me/919092211147?text=Hi! I'd like to order a single day breakfast." class="btn btn-secondary" style="width: 100%;">Order Now</a>
+            <!-- Pack Selector Tabs -->
+            <div class="pricing-pack-tabs">
+                <button class="pricing-pack-tab active" onclick="showPricingPack('basic', this)">
+                    <span class="tab-icon">&#127823;</span>
+                    <div class="tab-info">
+                        <strong>Basic Pack</strong>
+                        <span>5 Fruits + 2 Veggies + Sprouts</span>
+                    </div>
+                </button>
+                <button class="pricing-pack-tab" onclick="showPricingPack('protein', this)">
+                    <span class="tab-icon">&#128170;</span>
+                    <div class="tab-info">
+                        <strong>Protein Pack</strong>
+                        <span>7 Fruits + 2 Veggies + Egg + Nuts</span>
+                    </div>
+                    <span class="tab-popular">Popular</span>
+                </button>
+            </div>
+
+            <!-- Basic Pack Pricing -->
+            <div id="basic-pricing" class="pricing-content active">
+                <div class="pack-info-banner basic-banner">
+                    <div class="banner-icon">&#127823;</div>
+                    <div class="banner-text">
+                        <h3>Basic Pack</h3>
+                        <p>5 Types of Fruits + 2 Types of Veggies + Sprouts</p>
+                    </div>
                 </div>
 
-                <!-- Weekly Plan -->
-                <div class="pricing-card featured">
-                    <span class="pricing-badge">Most Popular</span>
-                    <h3>Weekly Plan</h3>
-                    <p style="color: var(--text-light); margin-bottom: 1rem;">Best for regular customers</p>
-                    <div class="price">₹549<span>/week</span></div>
-                    <ul class="pricing-features">
-                        <li><span class="check">✓</span> 6 days of breakfast (Mon-Sat)</li>
-                        <li><span class="check">✓</span> Save ₹45 per week</li>
-                        <li><span class="check">✓</span> Fresh morning delivery</li>
-                        <li><span class="check">✓</span> Pause anytime</li>
-                        <li><span class="check">✓</span> Priority support</li>
-                    </ul>
-                    <a href="https://wa.me/919092211147?text=Hi! I'd like to subscribe to the Weekly Plan (₹549/week)." class="btn btn-primary" style="width: 100%;">Subscribe Now</a>
+                <div class="pricing-grid">
+                    <!-- Daily -->
+                    <div class="pricing-card">
+                        <div class="pricing-card-header">
+                            <span class="plan-icon">&#128197;</span>
+                            <h3>Daily</h3>
+                        </div>
+                        <p class="plan-desc">Try before you commit</p>
+                        <div class="price">₹99<span>/day</span></div>
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> Full breakfast combo</li>
+                            <li><span class="check">✓</span> Fresh morning delivery</li>
+                            <li><span class="check">✓</span> No commitment</li>
+                            <li><span class="check">✓</span> Order any day</li>
+                        </ul>
+                        <a href="https://wa.me/919092211147?text=Hi! I'd like to order Basic Pack - Daily (₹99)." class="btn btn-secondary" style="width: 100%;">Order Now</a>
+                    </div>
+
+                    <!-- Weekly -->
+                    <div class="pricing-card featured">
+                        <span class="pricing-badge">Best Value</span>
+                        <div class="pricing-card-header">
+                            <span class="plan-icon">&#128198;</span>
+                            <h3>Weekly</h3>
+                        </div>
+                        <p class="plan-desc">Best for regular customers</p>
+                        <div class="price">₹549<span>/week</span></div>
+                        <div class="savings-tag">Save ₹45/week</div>
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> 6 days breakfast (Mon-Sat)</li>
+                            <li><span class="check">✓</span> Fresh morning delivery</li>
+                            <li><span class="check">✓</span> Pause anytime</li>
+                            <li><span class="check">✓</span> Priority support</li>
+                        </ul>
+                        <a href="https://wa.me/919092211147?text=Hi! I'd like to subscribe to Basic Pack - Weekly (₹549/week)." class="btn btn-primary" style="width: 100%;">Subscribe Now</a>
+                    </div>
+
+                    <!-- Monthly -->
+                    <div class="pricing-card">
+                        <div class="pricing-card-header">
+                            <span class="plan-icon">&#128467;</span>
+                            <h3>Monthly</h3>
+                        </div>
+                        <p class="plan-desc">Maximum savings</p>
+                        <div class="price">₹1,999<span>/month</span></div>
+                        <div class="savings-tag">Save ₹377/month</div>
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> 26 days of breakfast</li>
+                            <li><span class="check">✓</span> Fresh morning delivery</li>
+                            <li><span class="check">✓</span> Flexible pause option</li>
+                            <li><span class="check">✓</span> VIP support</li>
+                        </ul>
+                        <a href="https://wa.me/919092211147?text=Hi! I'd like to subscribe to Basic Pack - Monthly (₹1999/month)." class="btn btn-secondary" style="width: 100%;">Subscribe Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Protein Pack Pricing -->
+            <div id="protein-pricing" class="pricing-content">
+                <div class="pack-info-banner protein-banner">
+                    <div class="banner-icon">&#128170;</div>
+                    <div class="banner-text">
+                        <h3>Protein Pack</h3>
+                        <p>7 Types of Fruits + 2 Types of Veggies + Boiled Egg + Nuts & Seeds</p>
+                    </div>
                 </div>
 
-                <!-- Monthly Plan -->
-                <div class="pricing-card">
-                    <h3>Monthly Plan</h3>
-                    <p style="color: var(--text-light); margin-bottom: 1rem;">Maximum savings</p>
-                    <div class="price">₹1,999<span>/month</span></div>
-                    <ul class="pricing-features">
-                        <li><span class="check">✓</span> 26 days of breakfast</li>
-                        <li><span class="check">✓</span> Save ₹575 per month</li>
-                        <li><span class="check">✓</span> Fresh morning delivery</li>
-                        <li><span class="check">✓</span> Flexible pause option</li>
-                        <li><span class="check">✓</span> VIP support</li>
-                    </ul>
-                    <a href="https://wa.me/919092211147?text=Hi! I'd like to subscribe to the Monthly Plan (₹1999/month)." class="btn btn-secondary" style="width: 100%;">Subscribe Now</a>
+                <div class="pricing-grid">
+                    <!-- Daily -->
+                    <div class="pricing-card">
+                        <div class="pricing-card-header">
+                            <span class="plan-icon">&#128197;</span>
+                            <h3>Daily</h3>
+                        </div>
+                        <p class="plan-desc">Try before you commit</p>
+                        <div class="price">₹149<span>/day</span></div>
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> Complete protein breakfast</li>
+                            <li><span class="check">✓</span> Fresh morning delivery</li>
+                            <li><span class="check">✓</span> No commitment</li>
+                            <li><span class="check">✓</span> Order any day</li>
+                        </ul>
+                        <a href="https://wa.me/919092211147?text=Hi! I'd like to order Protein Pack - Daily (₹149)." class="btn btn-secondary" style="width: 100%;">Order Now</a>
+                    </div>
+
+                    <!-- Weekly -->
+                    <div class="pricing-card featured">
+                        <span class="pricing-badge">Most Popular</span>
+                        <div class="pricing-card-header">
+                            <span class="plan-icon">&#128198;</span>
+                            <h3>Weekly</h3>
+                        </div>
+                        <p class="plan-desc">Best for fitness enthusiasts</p>
+                        <div class="price">₹849<span>/week</span></div>
+                        <div class="savings-tag">Save ₹45/week</div>
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> 6 days breakfast (Mon-Sat)</li>
+                            <li><span class="check">✓</span> Fresh morning delivery</li>
+                            <li><span class="check">✓</span> Pause anytime</li>
+                            <li><span class="check">✓</span> Priority support</li>
+                        </ul>
+                        <a href="https://wa.me/919092211147?text=Hi! I'd like to subscribe to Protein Pack - Weekly (₹849/week)." class="btn btn-primary" style="width: 100%;">Subscribe Now</a>
+                    </div>
+
+                    <!-- Monthly -->
+                    <div class="pricing-card">
+                        <div class="pricing-card-header">
+                            <span class="plan-icon">&#128467;</span>
+                            <h3>Monthly</h3>
+                        </div>
+                        <p class="plan-desc">Maximum savings</p>
+                        <div class="price">₹3,599<span>/month</span></div>
+                        <div class="savings-tag">Save ₹275/month</div>
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> 26 days of breakfast</li>
+                            <li><span class="check">✓</span> Fresh morning delivery</li>
+                            <li><span class="check">✓</span> Flexible pause option</li>
+                            <li><span class="check">✓</span> VIP support</li>
+                        </ul>
+                        <a href="https://wa.me/919092211147?text=Hi! I'd like to subscribe to Protein Pack - Monthly (₹3599/month)." class="btn btn-secondary" style="width: 100%;">Subscribe Now</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -250,6 +356,16 @@
     <script>
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        function showPricingPack(pack, btn) {
+            // Update tabs
+            document.querySelectorAll('.pricing-pack-tab').forEach(tab => tab.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Update content
+            document.querySelectorAll('.pricing-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(pack + '-pricing').classList.add('active');
         }
 
         window.addEventListener('scroll', function() {

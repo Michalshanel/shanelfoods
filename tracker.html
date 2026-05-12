@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Tracker | Shanel Foods</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        :root {
+            --primary: #16a34a;
+            --primary-dark: #15803d;
+            --danger: #dc2626;
+            --warning: #f59e0b;
+            --info: #3b82f6;
+            --paused: #8b5cf6;
+            --bg-cream: #fefdf8;
+            --text-dark: #1a1a1a;
+            --text-muted: #666;
+            --border: #e5e5e5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--text-muted);
+            font-weight: 400;
+            font-size: 0.875rem;
+            display: block;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.25rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .stat-card p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .stat-card.warning h3 {
+            color: var(--warning);
+        }
+
+        .stat-card.paused h3 {
+            color: var(--paused);
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        select {
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: white;
+            cursor: pointer;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background: var(--border);
+            color: var(--text-dark);
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-warning {
+            background: var(--warning);
+            color: white;
+        }
+
+        .btn-info {
+            background: var(--info);
+            color: white;
+        }
+
+        .btn-paused {
+            background: var(--paused);
+            color: white;
+        }
+
+        .btn-small {
+            padding: 0.4rem 0.6rem;
+            font-size: 0.75rem;
+        }
+
+        /* Table */
+        .table-wrapper {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: #f9f9f9;
+            font-weight: 600;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tr:hover {
+            background: #fafafa;
+        }
+
+        tr.expiring-soon {
+            background: #fef3c7;
+        }
+
+        tr.expired {
+            background: #fee2e2;
+        }
+
+        tr.paused-row {
+            background: #f3e8ff;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .badge-basic {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+
+        .badge-protein {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+
+        .badge-daily {
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+        .badge-weekly {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-monthly {
+            background: #ede9fe;
+            color: #6d28d9;
+        }
+
+        .badge-active {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+
+        .badge-pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-expired {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        .badge-paused {
+            background: #f3e8ff;
+            color: #7c3aed;
+        }
+
+        .actions {
+            display: flex;
+            gap: 0.25rem;
+            flex-wrap: wrap;
+        }
+
+        .customer-name {
+            font-weight: 600;
+        }
+
+        .customer-address {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .location-link {
+            color: var(--info);
+            text-decoration: none;
+            font-size: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .location-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .modal-actions .btn {
+            flex: 1;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+        }
+
+        .empty-state h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        /* WhatsApp Link */
+        .whatsapp-link {
+            color: #25d366;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .whatsapp-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Route Button */
+        .route-section {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .route-section p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Pause Info */
+        .pause-info {
+            font-size: 0.7rem;
+            color: var(--paused);
+            margin-top: 0.25rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+            }
+
+            .search-box, select, .btn {
+                width: 100%;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            th, td {
+                padding: 0.5rem 0.25rem;
+                font-size: 0.75rem;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+
+            .route-section {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                Shanel Foods
+                <span>Customer Tracker</span>
+            </div>
+            <a href="index.html" class="btn btn-secondary btn-small">Back to Website</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Customer Tracker</h1>
+        <p class="subtitle">Manage your breakfast subscription customers</p>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3 id="totalCustomers">0</h3>
+                <p>Total Customers</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="activeCustomers">0</h3>
+                <p>Active Today</p>
+            </div>
+            <div class="stat-card paused">
+                <h3 id="pausedCustomers">0</h3>
+                <p>Paused</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="monthlyCustomers">0</h3>
+                <p>Monthly Plans</p>
+            </div>
+            <div class="stat-card warning">
+                <h3 id="expiringCustomers">0</h3>
+                <p>Expiring Soon</p>
+            </div>
+        </div>
+
+        <!-- Route Planning -->
+        <div class="route-section">
+            <div style="flex: 1;">
+                <strong>Delivery Route Planning</strong>
+                <p>Open Google Maps with all active customer locations for optimal delivery route</p>
+            </div>
+            <button class="btn btn-info" onclick="openRouteInMaps()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Open Route in Maps
+            </button>
+            <button class="btn btn-secondary" onclick="copyAddresses()">
+                Copy All Addresses
+            </button>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <input type="text" class="search-box" id="searchBox" placeholder="Search by name, phone, or address...">
+            <select id="filterPack">
+                <option value="">All Packs</option>
+                <option value="basic">Basic Pack</option>
+                <option value="protein">Protein Pack</option>
+            </select>
+            <select id="filterPlan">
+                <option value="">All Plans</option>
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+            </select>
+            <select id="filterStatus">
+                <option value="">All Status</option>
+                <option value="active">Active</option>
+                <option value="paused">Paused</option>
+                <option value="pending">Payment Pending</option>
+                <option value="expired">Expired</option>
+            </select>
+            <select id="filterArea">
+                <option value="">All Areas</option>
+                <option value="Kodungaiyur">Kodungaiyur</option>
+                <option value="Madhavaram">Madhavaram</option>
+                <option value="Kolathur">Kolathur</option>
+                <option value="Perambur">Perambur</option>
+                <option value="Vyasarpadi">Vyasarpadi</option>
+                <option value="Other">Other</option>
+            </select>
+            <button class="btn btn-primary" onclick="openModal()">+ Add Customer</button>
+        </div>
+
+        <!-- Table -->
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer & Address</th>
+                        <th>Phone</th>
+                        <th>Area</th>
+                        <th>Pack</th>
+                        <th>Plan</th>
+                        <th>End Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="customerTable">
+                </tbody>
+            </table>
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <h3>No customers yet</h3>
+                <p>Click "Add Customer" to get started</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <h2 id="modalTitle">Add Customer</h2>
+            <form id="customerForm">
+                <input type="hidden" id="customerId">
+
+                <div class="form-group">
+                    <label>Customer Name *</label>
+                    <input type="text" id="name" required placeholder="Enter full name">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" id="phone" required placeholder="9092211147">
+                    </div>
+                    <div class="form-group">
+                        <label>Area *</label>
+                        <select id="area" required>
+                            <option value="">Select Area</option>
+                            <option value="Kodungaiyur">Kodungaiyur</option>
+                            <option value="Madhavaram">Madhavaram</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Full Address</label>
+                    <textarea id="address" placeholder="Door no, Street name, Landmark, Area, Chennai"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Google Maps Link (Recommended)</label>
+                    <input type="url" id="mapsLink" placeholder="Paste Google Maps link here">
+                    <small style="color: var(--text-muted); font-size: 0.75rem;">
+                        How to get: Open Google Maps > Find location > Click "Share" > Copy link
+                    </small>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Pack Type *</label>
+                        <select id="pack" required>
+                            <option value="">Select Pack</option>
+                            <option value="basic">Basic Pack</option>
+                            <option value="protein">Protein Pack</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Plan *</label>
+                        <select id="plan" required>
+                            <option value="">Select Plan</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="monthly">Monthly</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Start Date *</label>
+                        <input type="date" id="startDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>End Date *</label>
+                        <input type="date" id="endDate" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Status *</label>
+                    <select id="status" required>
+                        <option value="active">Active</option>
+                        <option value="paused">Paused</option>
+                        <option value="pending">Payment Pending</option>
+                        <option value="expired">Expired</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="pauseReasonGroup" style="display: none;">
+                    <label>Pause Reason / Resume Date</label>
+                    <input type="text" id="pauseReason" placeholder="e.g., Out of town, will resume on 15th Jan">
+                </div>
+
+                <div class="form-group">
+                    <label>Notes</label>
+                    <input type="text" id="notes" placeholder="Any special instructions...">
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Customer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Data storage
+        let customers = JSON.parse(localStorage.getItem('shanelCustomers')) || [];
+
+        // Migrate old data (add address field if missing)
+        customers = customers.map(c => ({
+            ...c,
+            address: c.address || '',
+            mapsLink: c.mapsLink || '',
+            pauseReason: c.pauseReason || '',
+            pauseDate: c.pauseDate || ''
+        }));
+        saveData();
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCustomers();
+            updateStats();
+
+            // Set default dates
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('startDate').value = today;
+
+            // Auto-calculate end date based on plan
+            document.getElementById('plan').addEventListener('change', function() {
+                const startDate = new Date(document.getElementById('startDate').value);
+                let endDate = new Date(startDate);
+
+                if (this.value === 'daily') {
+                    endDate.setDate(endDate.getDate() + 1);
+                } else if (this.value === 'weekly') {
+                    endDate.setDate(endDate.getDate() + 7);
+                } else if (this.value === 'monthly') {
+                    endDate.setDate(endDate.getDate() + 30);
+                }
+
+                document.getElementById('endDate').value = endDate.toISOString().split('T')[0];
+            });
+
+            // Show/hide pause reason field
+            document.getElementById('status').addEventListener('change', function() {
+                document.getElementById('pauseReasonGroup').style.display =
+                    this.value === 'paused' ? 'block' : 'none';
+            });
+
+            // Search and filters
+            document.getElementById('searchBox').addEventListener('input', renderCustomers);
+            document.getElementById('filterPack').addEventListener('change', renderCustomers);
+            document.getElementById('filterPlan').addEventListener('change', renderCustomers);
+            document.getElementById('filterStatus').addEventListener('change', renderCustomers);
+            document.getElementById('filterArea').addEventListener('change', renderCustomers);
+        });
+
+        function saveData() {
+            localStorage.setItem('shanelCustomers', JSON.stringify(customers));
+        }
+
+        function renderCustomers() {
+            const search = document.getElementById('searchBox').value.toLowerCase();
+            const filterPack = document.getElementById('filterPack').value;
+            const filterPlan = document.getElementById('filterPlan').value;
+            const filterStatus = document.getElementById('filterStatus').value;
+            const filterArea = document.getElementById('filterArea').value;
+
+            let filtered = customers.filter(c => {
+                const matchSearch = c.name.toLowerCase().includes(search) ||
+                                   c.phone.includes(search) ||
+                                   (c.address && c.address.toLowerCase().includes(search));
+                const matchPack = !filterPack || c.pack === filterPack;
+                const matchPlan = !filterPlan || c.plan === filterPlan;
+                const matchStatus = !filterStatus || c.status === filterStatus;
+                const matchArea = !filterArea || c.area === filterArea;
+                return matchSearch && matchPack && matchPlan && matchStatus && matchArea;
+            });
+
+            // Sort: paused at bottom, then by end date (soonest first)
+            filtered.sort((a, b) => {
+                if (a.status === 'paused' && b.status !== 'paused') return 1;
+                if (a.status !== 'paused' && b.status === 'paused') return -1;
+                return new Date(a.endDate) - new Date(b.endDate);
+            });
+
+            const tbody = document.getElementById('customerTable');
+            const emptyState = document.getElementById('emptyState');
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = '';
+                emptyState.style.display = 'block';
+                return;
+            }
+
+            emptyState.style.display = 'none';
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            tbody.innerHTML = filtered.map(c => {
+                const endDate = new Date(c.endDate);
+                const daysLeft = Math.ceil((endDate - today) / (1000 * 60 * 60 * 24));
+
+                let rowClass = '';
+                if (c.status === 'paused') rowClass = 'paused-row';
+                else if (daysLeft < 0) rowClass = 'expired';
+                else if (daysLeft <= 3) rowClass = 'expiring-soon';
+
+                // Determine map link - use saved Maps link if available, otherwise search by address
+                const mapUrl = c.mapsLink ? c.mapsLink :
+                    (c.address ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.address + ', Chennai')}` : '');
+
+                const addressDisplay = c.address ?
+                    `<div class="customer-address">${truncate(c.address, 40)}</div>
+                     ${mapUrl ? `<a href="${mapUrl}" target="_blank" class="location-link">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        ${c.mapsLink ? 'Open Location' : 'Search on Map'}
+                     </a>` : ''}` : (c.mapsLink ? `<a href="${c.mapsLink}" target="_blank" class="location-link">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Open Location
+                     </a>` : '');
+
+                const pauseInfo = c.status === 'paused' && c.pauseReason ?
+                    `<div class="pause-info">${c.pauseReason}</div>` : '';
+
+                const pauseButton = c.status === 'paused' ?
+                    `<button class="btn btn-primary btn-small" onclick="resumeCustomer('${c.id}')" title="Resume">Resume</button>` :
+                    `<button class="btn btn-paused btn-small" onclick="pauseCustomer('${c.id}')" title="Pause">Pause</button>`;
+
+                return `
+                    <tr class="${rowClass}">
+                        <td>
+                            <div class="customer-name">${c.name}</div>
+                            ${addressDisplay}
+                        </td>
+                        <td>
+                            <a href="https://wa.me/91${c.phone}" target="_blank" class="whatsapp-link">
+                                ${c.phone}
+                            </a>
+                        </td>
+                        <td>${c.area}</td>
+                        <td><span class="badge badge-${c.pack}">${c.pack === 'basic' ? 'Basic' : 'Protein'}</span></td>
+                        <td><span class="badge badge-${c.plan}">${capitalize(c.plan)}</span></td>
+                        <td>
+                            ${formatDate(c.endDate)}
+                            ${c.status !== 'paused' && daysLeft <= 3 && daysLeft >= 0 ? `<br><small style="color: var(--warning);">(${daysLeft} days)</small>` : ''}
+                        </td>
+                        <td>
+                            <span class="badge badge-${c.status}">${capitalize(c.status)}</span>
+                            ${pauseInfo}
+                        </td>
+                        <td class="actions">
+                            <button class="btn btn-secondary btn-small" onclick="editCustomer('${c.id}')" title="Edit">Edit</button>
+                            ${pauseButton}
+                            <button class="btn btn-primary btn-small" onclick="renewCustomer('${c.id}')" title="Renew">Renew</button>
+                            <button class="btn btn-danger btn-small" onclick="deleteCustomer('${c.id}')" title="Delete">Del</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function updateStats() {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            const threeDaysLater = new Date(today);
+            threeDaysLater.setDate(threeDaysLater.getDate() + 3);
+
+            document.getElementById('totalCustomers').textContent = customers.length;
+            document.getElementById('activeCustomers').textContent = customers.filter(c =>
+                c.status === 'active' && new Date(c.endDate) >= today
+            ).length;
+            document.getElementById('pausedCustomers').textContent = customers.filter(c => c.status === 'paused').length;
+            document.getElementById('monthlyCustomers').textContent = customers.filter(c => c.plan === 'monthly').length;
+            document.getElementById('expiringCustomers').textContent = customers.filter(c => {
+                const endDate = new Date(c.endDate);
+                return c.status === 'active' && endDate >= today && endDate <= threeDaysLater;
+            }).length;
+        }
+
+        function openModal(id = null) {
+            document.getElementById('modal').classList.add('active');
+            document.getElementById('modalTitle').textContent = id ? 'Edit Customer' : 'Add Customer';
+            document.getElementById('customerId').value = id || '';
+
+            if (id) {
+                const customer = customers.find(c => c.id === id);
+                if (customer) {
+                    document.getElementById('name').value = customer.name;
+                    document.getElementById('phone').value = customer.phone;
+                    document.getElementById('area').value = customer.area;
+                    document.getElementById('address').value = customer.address || '';
+                    document.getElementById('mapsLink').value = customer.mapsLink || '';
+                    document.getElementById('pack').value = customer.pack;
+                    document.getElementById('plan').value = customer.plan;
+                    document.getElementById('startDate').value = customer.startDate;
+                    document.getElementById('endDate').value = customer.endDate;
+                    document.getElementById('status').value = customer.status;
+                    document.getElementById('pauseReason').value = customer.pauseReason || '';
+                    document.getElementById('notes').value = customer.notes || '';
+
+                    document.getElementById('pauseReasonGroup').style.display =
+                        customer.status === 'paused' ? 'block' : 'none';
+                }
+            } else {
+                document.getElementById('customerForm').reset();
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('startDate').value = today;
+                document.getElementById('pauseReasonGroup').style.display = 'none';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+        document.getElementById('customerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const id = document.getElementById('customerId').value;
+            const status = document.getElementById('status').value;
+
+            const customerData = {
+                id: id || Date.now().toString(),
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value.replace(/\D/g, ''),
+                area: document.getElementById('area').value,
+                address: document.getElementById('address').value,
+                mapsLink: document.getElementById('mapsLink').value,
+                pack: document.getElementById('pack').value,
+                plan: document.getElementById('plan').value,
+                startDate: document.getElementById('startDate').value,
+                endDate: document.getElementById('endDate').value,
+                status: status,
+                pauseReason: status === 'paused' ? document.getElementById('pauseReason').value : '',
+                pauseDate: status === 'paused' ? new Date().toISOString().split('T')[0] : '',
+                notes: document.getElementById('notes').value
+            };
+
+            if (id) {
+                const index = customers.findIndex(c => c.id === id);
+                customers[index] = customerData;
+            } else {
+                customers.push(customerData);
+            }
+
+            saveData();
+            renderCustomers();
+            updateStats();
+            closeModal();
+        });
+
+        function editCustomer(id) {
+            openModal(id);
+        }
+
+        function pauseCustomer(id) {
+            const reason = prompt('Enter pause reason (e.g., "Out of town until 20th Jan"):');
+            if (reason === null) return; // Cancelled
+
+            const customer = customers.find(c => c.id === id);
+            if (!customer) return;
+
+            customer.status = 'paused';
+            customer.pauseReason = reason;
+            customer.pauseDate = new Date().toISOString().split('T')[0];
+
+            saveData();
+            renderCustomers();
+            updateStats();
+        }
+
+        function resumeCustomer(id) {
+            const customer = customers.find(c => c.id === id);
+            if (!customer) return;
+
+            customer.status = 'active';
+            customer.pauseReason = '';
+
+            // Extend end date if it has passed
+            const today = new Date();
+            const endDate = new Date(customer.endDate);
+            if (endDate < today) {
+                let newEndDate = new Date(today);
+                if (customer.plan === 'daily') {
+                    newEndDate.setDate(newEndDate.getDate() + 1);
+                } else if (customer.plan === 'weekly') {
+                    newEndDate.setDate(newEndDate.getDate() + 7);
+                } else if (customer.plan === 'monthly') {
+                    newEndDate.setDate(newEndDate.getDate() + 30);
+                }
+                customer.endDate = newEndDate.toISOString().split('T')[0];
+                alert(`${customer.name} resumed! End date extended to ${formatDate(customer.endDate)}`);
+            } else {
+                alert(`${customer.name} resumed!`);
+            }
+
+            saveData();
+            renderCustomers();
+            updateStats();
+        }
+
+        function renewCustomer(id) {
+            const customer = customers.find(c => c.id === id);
+            if (!customer) return;
+
+            const today = new Date();
+            let endDate = new Date(today);
+
+            if (customer.plan === 'daily') {
+                endDate.setDate(endDate.getDate() + 1);
+            } else if (customer.plan === 'weekly') {
+                endDate.setDate(endDate.getDate() + 7);
+            } else if (customer.plan === 'monthly') {
+                endDate.setDate(endDate.getDate() + 30);
+            }
+
+            customer.startDate = today.toISOString().split('T')[0];
+            customer.endDate = endDate.toISOString().split('T')[0];
+            customer.status = 'active';
+            customer.pauseReason = '';
+
+            saveData();
+            renderCustomers();
+            updateStats();
+
+            alert(`${customer.name}'s subscription renewed until ${formatDate(customer.endDate)}`);
+        }
+
+        function deleteCustomer(id) {
+            if (!confirm('Are you sure you want to delete this customer?')) return;
+
+            customers = customers.filter(c => c.id !== id);
+            saveData();
+            renderCustomers();
+            updateStats();
+        }
+
+        function extractCoordsFromMapsLink(link) {
+            // Try to extract coordinates from various Google Maps URL formats
+            if (!link) return null;
+
+            // Format: @13.1234,80.5678 or /place/13.1234,80.5678
+            const coordMatch = link.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/) ||
+                               link.match(/place\/(-?\d+\.\d+),(-?\d+\.\d+)/);
+            if (coordMatch) {
+                return `${coordMatch[1]},${coordMatch[2]}`;
+            }
+
+            // Format: ?q=13.1234,80.5678
+            const qMatch = link.match(/[?&]q=(-?\d+\.\d+),(-?\d+\.\d+)/);
+            if (qMatch) {
+                return `${qMatch[1]},${qMatch[2]}`;
+            }
+
+            return null;
+        }
+
+        function getLocationForCustomer(c) {
+            // First try to extract coords from maps link
+            const coords = extractCoordsFromMapsLink(c.mapsLink);
+            if (coords) return coords;
+
+            // If has maps link but couldn't extract coords, still use the link address
+            if (c.mapsLink) {
+                // Try to get place name from link
+                const placeMatch = c.mapsLink.match(/place\/([^/@]+)/);
+                if (placeMatch) {
+                    return decodeURIComponent(placeMatch[1].replace(/\+/g, ' '));
+                }
+            }
+
+            // Fall back to address
+            return c.address ? c.address + ', Chennai' : null;
+        }
+
+        function openRouteInMaps() {
+            // Get all active customers with addresses or maps links
+            const activeCustomers = customers.filter(c =>
+                c.status === 'active' && (c.address || c.mapsLink)
+            );
+
+            if (activeCustomers.length === 0) {
+                alert('No active customers with addresses or map locations found.');
+                return;
+            }
+
+            // Group by area for better routing
+            const kodungaiyur = activeCustomers.filter(c => c.area === 'Kodungaiyur');
+            const madhavaram = activeCustomers.filter(c => c.area === 'Madhavaram');
+            const others = activeCustomers.filter(c => c.area === 'Other');
+
+            // Combine in logical order
+            const orderedCustomers = [...kodungaiyur, ...madhavaram, ...others];
+
+            // Get locations for each customer
+            const locations = orderedCustomers.map(c => getLocationForCustomer(c)).filter(Boolean);
+
+            if (locations.length === 0) {
+                alert('Could not find valid locations for any customers.');
+                return;
+            }
+
+            if (locations.length === 1) {
+                // Single destination
+                const url = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(locations[0])}`;
+                window.open(url, '_blank');
+            } else {
+                // Multiple destinations - use waypoints
+                const destination = locations[locations.length - 1];
+                const waypoints = locations.slice(0, -1).join('|');
+
+                const url = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}&waypoints=${encodeURIComponent(waypoints)}`;
+                window.open(url, '_blank');
+            }
+        }
+
+        function copyAddresses() {
+            const activeCustomers = customers.filter(c =>
+                c.status === 'active' && (c.address || c.mapsLink)
+            );
+
+            if (activeCustomers.length === 0) {
+                alert('No active customers with addresses found.');
+                return;
+            }
+
+            const addressList = activeCustomers.map((c, i) => {
+                let info = `${i + 1}. ${c.name} (${c.area})`;
+                if (c.address) info += `\n   ${c.address}`;
+                if (c.mapsLink) info += `\n   Map: ${c.mapsLink}`;
+                info += `\n   Ph: ${c.phone}`;
+                return info;
+            }).join('\n\n');
+
+            navigator.clipboard.writeText(addressList).then(() => {
+                alert('Addresses copied to clipboard!');
+            }).catch(() => {
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = addressList;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                alert('Addresses copied to clipboard!');
+            });
+        }
+
+        function truncate(str, length) {
+            if (!str) return '';
+            return str.length > length ? str.substring(0, length) + '...' : str;
+        }
+
+        function capitalize(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+        }
+
+        // Close modal on outside click
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Keyboard shortcut
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>

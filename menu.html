@@ -3,64 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="KnDDmXjN0e_a5bDSrs1IpTeSx2YQhEuI0XfjEdIGVVA" />
-    <title>Breakfast Packs Menu | Shanel Foods Chennai - Basic & Protein Packs</title>
-    <meta name="description" content="Choose from Basic or Protein breakfast packs. Fresh fruits, veggies, sprouts, nuts, seeds delivered in Kodungaiyur & Madhavaram Chennai.">
-    <meta name="keywords" content="Shanel Foods menu, breakfast packs Chennai, healthy breakfast, fruits delivery, protein breakfast, sprouts, nuts and seeds">
+    <title>Menu & Pricing | Shanel Foods - All Breakfast Boxes Chennai</title>
+    <meta name="description" content="Explore all 7 breakfast box options at Shanel Foods with daily prices. Mini Box ₹99, Protein Box ₹149, Kids Box ₹99, Chicken Box ₹199, Skin Glow ₹99, Pregnancy ₹149, Diabetic ₹99. Delivered fresh Mon–Sat in Chennai.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://shanelfoods.pages.dev/menu.html">
-
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://shanelfoods.pages.dev/menu.html">
-    <meta property="og:title" content="Breakfast Packs Menu | Shanel Foods">
-    <meta property="og:description" content="Basic & Protein breakfast packs with fresh fruits, veggies, sprouts, nuts and seeds.">
+    <meta property="og:title" content="Menu & Pricing | Shanel Foods">
     <meta property="og:site_name" content="Shanel Foods">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Menu",
-        "name": "Shanel Foods Breakfast Packs",
-        "description": "Healthy breakfast packs with fruits, veggies, sprouts, nuts and seeds",
-        "hasMenuSection": [
-            {
-                "@type": "MenuSection",
-                "name": "Basic Pack",
-                "description": "5 fruits, 2 veggies, and sprouts"
-            },
-            {
-                "@type": "MenuSection",
-                "name": "Protein Pack",
-                "description": "7 fruits, 2 veggies, egg, nuts and seeds"
-            }
-        ]
-    }
-    </script>
-
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Shanel Foods Breakfast Boxes","description":"Fresh healthy breakfast delivery service","brand":{"@type":"Brand","name":"Shanel Foods"},"offers":{"@type":"AggregateOffer","priceCurrency":"INR","lowPrice":"99","highPrice":"199","availability":"https://schema.org/InStock"}}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav>
-            <a href="index.html" class="logo">
-                <img src="logo.svg" alt="Shanel Foods - Healthy Morning Breakfasts" class="logo-img">
-            </a>
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a href="index.html" class="logo"><img src="logo.svg" alt="Shanel Foods" class="logo-img"></a>
+            <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html" class="active">Menu</a></li>
-                <li><a href="pricing.html">Plans & Pricing</a></li>
+                <li><a href="menu.html" class="active">Menu & Pricing</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="https://wa.me/919092211147?text=Hi! I'd like to order healthy breakfast." class="nav-cta">Order Now</a></li>
@@ -70,464 +35,246 @@
 
     <!-- Page Header -->
     <section class="page-header">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
         <div class="container">
-            <h1>Our Breakfast Packs</h1>
-            <p>Choose the perfect pack to fuel your healthy mornings</p>
+            <span class="section-label reveal">Menu & Pricing</span>
+            <h1 class="reveal">Our Breakfast Boxes</h1>
+            <p class="reveal">7 carefully crafted boxes for every lifestyle — fresh every morning, Mon to Sat. No hidden charges, simple daily prices.</p>
         </div>
     </section>
 
-    <!-- Packs Section -->
-    <section class="menu-section">
+    <!-- Cards -->
+    <section class="boxes-section" style="background:var(--bg-cream);">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label">Two Great Options</span>
-                <h2>Pick Your Pack</h2>
-                <p>Fresh, nutritious breakfast delivered Monday to Saturday</p>
+
+            <div class="boxes-category-label reveal">
+                <span class="category-badge-reg">Regular Boxes</span>
+                <div class="category-line"></div>
             </div>
 
-            <!-- Pack Selector Dropdown -->
-            <div class="pack-selector">
-                <label class="selector-label">Select Your Pack</label>
-                <div class="custom-dropdown" onclick="toggleDropdown()">
-                    <div class="dropdown-selected">
-                        <span class="selected-icon">&#127823;</span>
-                        <span class="selected-text">Choose a breakfast pack</span>
-                        <span class="dropdown-arrow">&#9662;</span>
+            <div class="menu-cards-grid">
+                <!-- Mini Box -->
+                <div class="mcard tilt-card reveal" style="transition-delay:.05s;">
+                    <div class="mcard-top">
+                        <img src="minipack.png" alt="Mini Box">
+                        <span class="mcard-chip">Regular</span>
                     </div>
-                    <div class="dropdown-options">
-                        <div class="dropdown-option" onclick="selectPack('basic', event)">
-                            <span class="option-icon">&#127823;</span>
-                            <div class="option-info">
-                                <strong>Basic Pack</strong>
-                                <span>5 Fruits + 2 Veggies + Sprouts</span>
-                            </div>
+                    <div class="mcard-body">
+                        <div class="mcard-name">Mini Box</div>
+                        <div class="mcard-desc">Light & balanced daily breakfast</div>
+                        <div class="mcard-price">₹99<small>/day</small></div>
+                        <div class="mcard-tags">
+                            <span class="mcard-tag">5 types of fruits</span>
+                            <span class="mcard-tag">2 types of veggies</span>
+                            <span class="mcard-tag">Fresh sprouts</span>
                         </div>
-                        <div class="dropdown-option" onclick="selectPack('protein', event)">
-                            <span class="option-icon">&#128170;</span>
-                            <div class="option-info">
-                                <strong>Protein Pack</strong>
-                                <span>7 Fruits + 2 Veggies + Egg + Nuts</span>
-                            </div>
-                            <span class="option-badge">Popular</span>
+                        <a href="https://wa.me/919092211147?text=Hi! I'd like to order a Mini Box (₹99)." class="mcard-btn" target="_blank">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Protein Box -->
+                <div class="mcard tilt-card reveal" style="transition-delay:.1s;">
+                    <div class="mcard-top">
+                        <img src="protein_pack.png" alt="Protein Pack">
+                        <span class="mcard-chip">Regular</span>
+                    </div>
+                    <div class="mcard-body">
+                        <div class="mcard-name">Protein Pack</div>
+                        <div class="mcard-desc">High-protein for active days</div>
+                        <div class="mcard-price">₹149<small>/day</small></div>
+                        <div class="mcard-tags">
+                            <span class="mcard-tag">5 types of fruits</span>
+                            <span class="mcard-tag">2 types of veggies</span>
+                            <span class="mcard-tag">2 boiled eggs</span>
+                            <span class="mcard-tag">Nuts &amp; seeds</span>
+                            <span class="mcard-tag">Fresh sprouts</span>
                         </div>
+                        <a href="https://wa.me/919092211147?text=Hi! I'd like to order a Protein Box (₹149)." class="mcard-btn" target="_blank">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kids Box -->
+                <div class="mcard tilt-card reveal" style="transition-delay:.15s;">
+                    <div class="mcard-top">
+                        <img src="kidspack.png" alt="Kids Box">
+                        <span class="mcard-chip">Regular</span>
+                    </div>
+                    <div class="mcard-body">
+                        <div class="mcard-name">Kids Box</div>
+                        <div class="mcard-desc">Fun & nutritious bites for children</div>
+                        <div class="mcard-price">₹99<small>/day</small></div>
+                        <div class="mcard-tags">
+                            <span class="mcard-tag">2 types of fruits</span>
+                            <span class="mcard-tag">1 type of veggie</span>
+                            <span class="mcard-tag">1 boiled egg</span>
+                            <span class="mcard-tag">Nuts &amp; seeds</span>
+                            <span class="mcard-tag">Fresh sprouts</span>
+                        </div>
+                        <a href="https://wa.me/919092211147?text=Hi! I'd like to order a Kids Box (₹99)." class="mcard-btn" target="_blank">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Chicken Box -->
+                <div class="mcard tilt-card reveal" style="transition-delay:.2s;">
+                    <div class="mcard-top">
+                        <img src="chicken_pack.png" alt="Chicken Box">
+                        <span class="mcard-chip">Regular</span>
+                    </div>
+                    <div class="mcard-body">
+                        <div class="mcard-name">Chicken Box</div>
+                        <div class="mcard-desc">Protein-rich with fresh chicken</div>
+                        <div class="mcard-price">₹199<small>/day</small></div>
+                        <div class="mcard-tags">
+                            <span class="mcard-tag">130g fresh chicken</span>
+                            <span class="mcard-tag">2 types boiled veggies</span>
+                            <span class="mcard-tag">1 type of fruit</span>
+                            <span class="mcard-tag">2 boiled eggs</span>
+                            <span class="mcard-tag">Nuts &amp; seeds</span>
+                            <span class="mcard-tag">Fresh sprouts</span>
+                        </div>
+                        <a href="https://wa.me/919092211147?text=Hi! I'd like to order a Chicken Box (₹199)." class="mcard-btn" target="_blank">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Order on WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div class="packs-grid">
-                <!-- Basic Pack -->
-                <div class="pack-card">
-                    <div class="pack-header basic">
-                        <div class="pack-icon">&#127823;</div>
-                        <span class="pack-label">Basic Pack</span>
-                        <h3>Essential Nutrition</h3>
-                        <p class="pack-tagline">Start your healthy journey</p>
+            <div class="boxes-category-label reveal" style="margin-top:3rem;">
+                <span class="category-badge-spec">Special Boxes</span>
+                <div class="category-line"></div>
+            </div>
+
+            <div class="menu-cards-grid-3">
+                <!-- Skin Glow Box -->
+                <div class="mcard tilt-card reveal" style="transition-delay:.05s;">
+                    <div class="mcard-top">
+                        <img src="glowpack.png" alt="Skin Glow Box">
+                        <span class="mcard-chip">Special</span>
                     </div>
-                    <div class="pack-content">
-                        <ul class="pack-includes">
-                            <li>
-                                <span class="item-emoji">&#127822;</span>
-                                <div class="item-info">
-                                    <strong>5 Types of Fruits</strong>
-                                    <span>Fresh seasonal varieties</span>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="item-emoji">&#129382;</span>
-                                <div class="item-info">
-                                    <strong>2 Types of Veggies</strong>
-                                    <span>Crunchy & nutritious</span>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="item-emoji">&#127793;</span>
-                                <div class="item-info">
-                                    <strong>Sprouts</strong>
-                                    <span>Protein-rich goodness</span>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="pack-footer">
-                            <a href="https://wa.me/919092211147?text=Hi! I'd like to order the Basic Pack." class="btn btn-pack">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                                Order Basic Pack
-                            </a>
+                    <div class="mcard-body">
+                        <div class="mcard-name">Skin Glow Box</div>
+                        <div class="mcard-desc">Antioxidant-rich · For glowing skin</div>
+                        <div class="mcard-price spec">₹99<small>/day</small></div>
+                        <div class="mcard-tags">
+                            <span class="mcard-tag spec">Antioxidant-rich</span>
+                            <span class="mcard-tag">2 types of fruits</span>
+                            <span class="mcard-tag">2 types of veggies</span>
+                            <span class="mcard-tag">Nuts &amp; seeds</span>
+                            <span class="mcard-tag">Fresh sprouts</span>
                         </div>
+                        <a href="https://wa.me/919092211147?text=Hi! I'd like to order a Skin Glow Box (₹99)." class="mcard-btn" target="_blank">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Order on WhatsApp
+                        </a>
                     </div>
                 </div>
 
-                <!-- Protein Pack -->
-                <div class="pack-card featured">
-                    <div class="pack-badge">
-                        <span class="badge-icon">&#11088;</span> Most Popular
+                <!-- Pregnancy Box -->
+                <div class="mcard tilt-card reveal" style="transition-delay:.1s;">
+                    <div class="mcard-top no-img">
+                        <div class="mcard-icon">🤰</div>
+                        <span class="mcard-chip">Special</span>
                     </div>
-                    <div class="pack-header protein">
-                        <div class="pack-icon">&#128170;</div>
-                        <span class="pack-label">Protein Pack</span>
-                        <h3>Power Nutrition</h3>
-                        <p class="pack-tagline">Maximum energy & strength</p>
-                    </div>
-                    <div class="pack-content">
-                        <ul class="pack-includes">
-                            <li>
-                                <span class="item-emoji">&#127822;</span>
-                                <div class="item-info">
-                                    <strong>7 Types of Fruits</strong>
-                                    <span>Premium variety selection</span>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="item-emoji">&#129382;</span>
-                                <div class="item-info">
-                                    <strong>2 Types of Veggies</strong>
-                                    <span>Fresh & crunchy</span>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="item-emoji">&#127793;</span>
-                                <div class="item-info">
-                                    <strong>Sprouts</strong>
-                                    <span>Protein-rich goodness</span>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="item-emoji">&#129370;</span>
-                                <div class="item-info">
-                                    <strong>Boiled Egg</strong>
-                                    <span>High-quality protein</span>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="item-emoji">&#129472;</span>
-                                <div class="item-info">
-                                    <strong>Nuts & Seeds</strong>
-                                    <span>Energy-boosting mix</span>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="pack-footer">
-                            <a href="https://wa.me/919092211147?text=Hi! I'd like to order the Protein Pack." class="btn btn-pack-featured">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                                Order Protein Pack
-                            </a>
+                    <div class="mcard-body">
+                        <div class="mcard-name">Pregnancy Box</div>
+                        <div class="mcard-desc">Nourishing · Safe for expecting mothers</div>
+                        <div class="mcard-price spec">₹149<small>/day</small></div>
+                        <div class="mcard-tags">
+                            <span class="mcard-tag spec">For expecting mothers</span>
+                            <span class="mcard-tag">2 types of fruits</span>
+                            <span class="mcard-tag">2 boiled veggies</span>
+                            <span class="mcard-tag">1 boiled egg</span>
+                            <span class="mcard-tag">Nuts &amp; seeds</span>
+                            <span class="mcard-tag">Fresh sprouts</span>
                         </div>
+                        <a href="https://wa.me/919092211147?text=Hi! I'd like to order a Pregnancy Box (₹149)." class="mcard-btn" target="_blank">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Diabetic Box -->
+                <div class="mcard tilt-card reveal" style="transition-delay:.15s;">
+                    <div class="mcard-top">
+                        <img src="diabeticpack.png" alt="Diabetic Box">
+                        <span class="mcard-chip">Special</span>
+                    </div>
+                    <div class="mcard-body">
+                        <div class="mcard-name">Diabetic Box</div>
+                        <div class="mcard-desc">Low-GI · Sugar-conscious choices</div>
+                        <div class="mcard-price spec">₹99<small>/day</small></div>
+                        <div class="mcard-tags">
+                            <span class="mcard-tag spec">Low-sugar</span>
+                            <span class="mcard-tag">3 types of fruits</span>
+                            <span class="mcard-tag">2 types of veggies</span>
+                            <span class="mcard-tag">Fresh sprouts</span>
+                        </div>
+                        <a href="https://wa.me/919092211147?text=Hi! I'd like to order a Diabetic Box (₹99)." class="mcard-btn" target="_blank">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Order on WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- What's Available Section -->
-    <section style="background: var(--bg-light);">
+    <!-- Subscription CTA -->
+    <section style="padding:2.5rem 0 0;">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label">Fresh Selection</span>
-                <h2>What's on the Menu</h2>
-                <p>We rotate items daily based on freshness and seasonal availability</p>
-            </div>
-
-            <!-- Accordion Menu -->
-            <div class="menu-accordion">
-                <!-- Fruits -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <div class="accordion-title">
-                            <span class="accordion-icon">&#127822;</span>
-                            <div class="accordion-text">
-                                <h3>Fruits</h3>
-                                <span class="accordion-count">14 varieties available</span>
-                            </div>
-                        </div>
-                        <div class="accordion-arrow">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="items-grid">
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=150&h=150&fit=crop" alt="Apple">
-                                <span>Apple</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=150&h=150&fit=crop" alt="Banana">
-                                <span>Banana</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1582979512210-99b6a53386f9?w=150&h=150&fit=crop" alt="Orange">
-                                <span>Orange</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1536511132770-e5058c7e8c46?w=150&h=150&fit=crop" alt="Guava">
-                                <span>Guava</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=150&h=150&fit=crop" alt="Grapes">
-                                <span>Grapes</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1517282009859-f000ec3b26fe?w=150&h=150&fit=crop" alt="Papaya">
-                                <span>Papaya</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1563114773-84221bd62daa?w=150&h=150&fit=crop" alt="Watermelon">
-                                <span>Watermelon</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.pexels.com/photos/2894205/pexels-photo-2894205.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Muskmelon">
-                                <span>Muskmelon</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=150&h=150&fit=crop" alt="Pineapple">
-                                <span>Pineapple</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1527325678964-54921661f888?w=150&h=150&fit=crop" alt="Dragon Fruit">
-                                <span>Dragon Fruit</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=150&h=150&fit=crop" alt="Strawberry">
-                                <span>Strawberry</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=150&h=150&fit=crop" alt="Blueberry">
-                                <span>Blueberry</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1585059895524-72359e06133a?w=150&h=150&fit=crop" alt="Kiwi">
-                                <span>Kiwi</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.pexels.com/photos/65169/pexels-photo-65169.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Pomegranate">
-                                <span>Pomegranate</span>
-                            </div>
-                        </div>
-                    </div>
+            <div class="sub-cta-banner reveal">
+                <div class="sub-cta-text">
+                    <h3>Want a Weekly or Monthly Subscription?</h3>
+                    <p>All 7 boxes are available on weekly and monthly subscription plans. Contact us for the best rates.</p>
                 </div>
-
-                <!-- Veggies -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <div class="accordion-title">
-                            <span class="accordion-icon">&#129382;</span>
-                            <div class="accordion-text">
-                                <h3>Veggies</h3>
-                                <span class="accordion-count">6 varieties available</span>
-                            </div>
-                        </div>
-                        <div class="accordion-arrow">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="items-grid">
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?w=150&h=150&fit=crop" alt="Cucumber">
-                                <span>Cucumber</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=150&h=150&fit=crop" alt="Carrot">
-                                <span>Carrot</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=150&h=150&fit=crop" alt="Sweet Corn">
-                                <span>Sweet Corn</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.pexels.com/photos/7020684/pexels-photo-7020684.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Baby Corn">
-                                <span>Baby Corn</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.pexels.com/photos/89247/pexels-photo-89247.png?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Sweet Potato">
-                                <span>Sweet Potato</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.pexels.com/photos/1359326/pexels-photo-1359326.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Broccoli">
-                                <span>Broccoli</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sprouts -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <div class="accordion-title">
-                            <span class="accordion-icon">&#127793;</span>
-                            <div class="accordion-text">
-                                <h3>Sprouts</h3>
-                                <span class="accordion-count">5 varieties available</span>
-                            </div>
-                        </div>
-                        <div class="accordion-arrow">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="items-grid">
-                            <div class="item-card">
-                                <img src="https://images.pexels.com/photos/69482/pexels-photo-69482.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Green Gram">
-                                <span>Green Gram</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.pexels.com/photos/69482/pexels-photo-69482.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Channa">
-                                <span>Channa</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.pexels.com/photos/4198018/pexels-photo-4198018.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Rajma">
-                                <span>Rajma</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.pexels.com/photos/4871119/pexels-photo-4871119.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Peanut">
-                                <span>Peanut</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=150&h=150&fit=crop" alt="Kambu">
-                                <span>Kambu (Pearl Millet)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Nuts & Seeds -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <div class="accordion-title">
-                            <span class="accordion-icon">&#129472;</span>
-                            <div class="accordion-text">
-                                <h3>Nuts & Seeds</h3>
-                                <span class="accordion-count">7 varieties available</span>
-                            </div>
-                            <span class="protein-badge">Protein Pack</span>
-                        </div>
-                        <div class="accordion-arrow">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="items-grid">
-                            <div class="item-card">
-                                <img src="https://images.pexels.com/photos/4663476/pexels-photo-4663476.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Cashew">
-                                <span>Cashew</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1508061253366-f7da158b6d46?w=150&h=150&fit=crop" alt="Badam">
-                                <span>Badam (Almonds)</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.pexels.com/photos/5472309/pexels-photo-5472309.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Raisins">
-                                <span>Raisins</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.pexels.com/photos/1295572/pexels-photo-1295572.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Walnut">
-                                <span>Walnut</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.pexels.com/photos/1537169/pexels-photo-1537169.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Sunflower Seeds">
-                                <span>Sunflower Seeds</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.pexels.com/photos/5946630/pexels-photo-5946630.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Pumpkin Seeds">
-                                <span>Pumpkin Seeds</span>
-                            </div>
-                            <div class="item-card">
-                                <img src="https://images.pexels.com/photos/5945803/pexels-photo-5945803.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Pista">
-                                <span>Pista (Pistachio)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Egg -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <div class="accordion-title">
-                            <span class="accordion-icon">&#129370;</span>
-                            <div class="accordion-text">
-                                <h3>Egg</h3>
-                                <span class="accordion-count">Fresh boiled egg</span>
-                            </div>
-                            <span class="protein-badge">Protein Pack</span>
-                        </div>
-                        <div class="accordion-arrow">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="items-grid">
-                            <div class="item-card">
-                                <img src="https://images.unsplash.com/photo-1598965675045-45c5e72c7d05?w=150&h=150&fit=crop" alt="Boiled Egg">
-                                <span>Boiled Egg</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Menu Disclaimer -->
-    <section style="background: var(--primary-color); color: white; padding: 1.5rem 0;">
-        <div class="container" style="text-align: center;">
-            <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
-                <strong>Note:</strong> Items rotate daily based on <strong>freshness and seasonal availability</strong>. Menu can be <strong>customized based on your preferences</strong>.
-            </p>
-        </div>
-    </section>
-
-    <!-- Note Section -->
-    <section style="background: white;">
-        <div class="container">
-            <div class="section-header">
-                <h2>Good to Know</h2>
-            </div>
-            <div class="highlights-grid">
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <img src="https://images.unsplash.com/photo-1495214783159-3503fd1b572d?w=400&h=300&fit=crop" alt="Calendar">
-                    </div>
-                    <h3>Monday - Saturday</h3>
-                    <p>We deliver fresh breakfasts 6 days a week. Sunday is our day off.</p>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=400&h=300&fit=crop" alt="Morning">
-                    </div>
-                    <h3>Morning Delivery</h3>
-                    <p>Your breakfast arrives fresh every morning before you start your day.</p>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400&h=300&fit=crop" alt="Customizable">
-                    </div>
-                    <h3>Customizable</h3>
-                    <p>Have dietary preferences? Let us know and we'll adjust your menu.</p>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <img src="https://images.unsplash.com/photo-1464454709131-ffd692591ee5?w=400&h=300&fit=crop" alt="Seasonal">
-                    </div>
-                    <h3>Seasonal Freshness</h3>
-                    <p>Menu updates based on seasonal availability to ensure the freshest produce.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section style="text-align: center;">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Ready to Order?</span>
-                <h2>Start Your Healthy Morning Today</h2>
-                <p>Choose your pack and get started</p>
-            </div>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="pricing.html" class="btn btn-primary">View Plans & Pricing</a>
-                <a href="https://wa.me/919092211147?text=Hi! I'd like to know more about breakfast packs." class="btn btn-whatsapp">
+                <a href="https://wa.me/919092211147?text=Hi! I'd like to know about weekly and monthly subscription plans." class="btn btn-whatsapp" style="flex-shrink:0;">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    Order on WhatsApp
+                    Get Subscription Rates
                 </a>
             </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="background:var(--bg-cream);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">FAQ</span>
+                <h2>Common Questions</h2>
+            </div>
+            <div style="max-width:780px;margin:0 auto;display:grid;gap:1rem;">
+                <div class="faq-card reveal" style="transition-delay:.05s;"><div class="faq-icon">🕐</div><div><h3>When do you deliver?</h3><p>Every morning Monday to Saturday. Sundays are a day off.</p></div></div>
+                <div class="faq-card reveal" style="transition-delay:.1s;"><div class="faq-icon">📦</div><div><h3>How do I order?</h3><p>Just send us a WhatsApp message with the box name and we'll confirm your order and delivery time.</p></div></div>
+                <div class="faq-card reveal" style="transition-delay:.15s;"><div class="faq-icon">🔄</div><div><h3>Can I change my box anytime?</h3><p>Yes, you can switch between boxes anytime. Just let us know 24 hours in advance on WhatsApp.</p></div></div>
+                <div class="faq-card reveal" style="transition-delay:.2s;"><div class="faq-icon">💳</div><div><h3>How do I pay?</h3><p>We accept UPI, bank transfer, and cash. Payment can be made daily or in advance for subscriptions.</p></div></div>
+                <div class="faq-card reveal" style="transition-delay:.25s;"><div class="faq-icon">📍</div><div><h3>Which areas do you deliver to?</h3><p>We currently deliver in Kodungaiyur, Madhavaram, Kolathur, Perambur and Vyasarpadi, Chennai. WhatsApp us to check if your exact street is covered.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section reveal">
+        <div class="container">
+            <span class="section-label">Ready to Start?</span>
+            <h2>Order Your First Box Today</h2>
+            <p>Fresh, healthy breakfast at your door every morning — starting at just ₹99</p>
+            <a href="https://wa.me/919092211147?text=Hi! I'd like to place an order for a breakfast box." class="btn btn-whatsapp">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Order on WhatsApp
+            </a>
         </div>
     </section>
 
@@ -536,20 +283,17 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <div class="logo">
-                        <span class="logo-main">Shanel Foods</span>
-                        <span class="logo-sub">Healthy Morning Breakfasts</span>
-                    </div>
-                    <p>Delivering fresh, nutritious breakfasts in Kodungaiyur & Madhavaram. Serving office workers, fitness enthusiasts, and families.</p>
+                    <div><span class="logo-main">Shanel Foods</span><span class="logo-sub">Healthy Morning Breakfasts</span></div>
+                    <p>Delivering fresh, nutritious breakfast boxes in Kodungaiyur, Madhavaram, Kolathur, Perambur &amp; Vyasarpadi every morning.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="pricing.html">Plans & Pricing</a></li>
+                        <li><a href="menu.html">Menu & Pricing</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="tracker.html">Customer Tracker</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -557,83 +301,29 @@
                     <ul>
                         <li><a href="tel:+919092211147">+91 90922 11147</a></li>
                         <li><a href="mailto:shanelfoodschennai@gmail.com">shanelfoodschennai@gmail.com</a></li>
-                        <li><a href="https://wa.me/919092211147?text=Hi! I'd like to order healthy breakfast.">WhatsApp Us</a></li>
+                        <li><a href="https://wa.me/919092211147?text=Hi!">WhatsApp Us</a></li>
                         <li><a href="https://instagram.com/shanelfoods" target="_blank">Instagram</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Shanel Foods. All rights reserved.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Shanel Foods. All rights reserved.</p></div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/919092211147?text=Hi! I'd like to order healthy breakfast." class="whatsapp-float" target="_blank">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         <span class="tooltip">Order on WhatsApp</span>
     </a>
 
+    <script src="https://unpkg.com/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
     <script>
-        function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        }
-
-        function toggleDropdown() {
-            document.querySelector('.custom-dropdown').classList.toggle('open');
-        }
-
-        function selectPack(pack, event) {
-            event.stopPropagation();
-            const dropdown = document.querySelector('.custom-dropdown');
-            const selectedText = dropdown.querySelector('.selected-text');
-            const selectedIcon = dropdown.querySelector('.selected-icon');
-
-            if (pack === 'basic') {
-                selectedIcon.innerHTML = '&#127823;';
-                selectedText.textContent = 'Basic Pack - Essential Nutrition';
-                document.querySelector('.pack-card:not(.featured)').scrollIntoView({ behavior: 'smooth', block: 'center' });
-            } else {
-                selectedIcon.innerHTML = '&#128170;';
-                selectedText.textContent = 'Protein Pack - Power Nutrition';
-                document.querySelector('.pack-card.featured').scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-
-            dropdown.classList.remove('open');
-        }
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            const dropdown = document.querySelector('.custom-dropdown');
-            if (!dropdown.contains(e.target)) {
-                dropdown.classList.remove('open');
-            }
-        });
-
-        // Accordion toggle
-        function toggleAccordion(header) {
-            const item = header.parentElement;
-            const isOpen = item.classList.contains('open');
-
-            // Close all items
-            document.querySelectorAll('.accordion-item').forEach(i => {
-                i.classList.remove('open');
-            });
-
-            // Open clicked item if it wasn't open
-            if (!isOpen) {
-                item.classList.add('open');
-            }
-        }
-
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+        function toggleMenu() { document.querySelector('.nav-links').classList.toggle('active'); }
+        window.addEventListener('scroll', function() { document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50); });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        VanillaTilt.init(document.querySelectorAll('.tilt-card'), { max:7, speed:400, glare:true, 'max-glare':.08, scale:1.02 });
     </script>
 </body>
 </html>

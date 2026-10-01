@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /tracker.html
 
 Sitemap: https://shanelfoods.com/sitemap.xml
